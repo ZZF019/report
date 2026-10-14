@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage{ctex}       
+\usepackage{enumitem}   
+\usepackage{geometry}   
+\usepackage{verbatim}   
+\usepackage{graphicx}   
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+\section*{学习进度汇报}
+\setcounter{section}{1}
+
+\subsection{Git 问题与解决办法}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{网络问题}：电脑网络总是无法访问到GitHub网站。
+    \\ 解决:加速器可以加速网页，可以正常登录网站。
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.5\linewidth]{web.png}
+        \caption{GitHub网页加速示意图}
+        \label{fig:git_web}
+     \end{figure}
+    \item \textbf{网络问题}：加速器可以加速网页，但网络原因vscode没法关联GitHub只能从文件夹里面用Git Bush传输。
+    \\ 解决:暂时无法解决，但不影响正常使用。可以考虑其他产品。
+    
+
+    \item \textbf{推送代码被拒绝}：本地版本落后于远程仓库，直接 \verb|git push| 失败。
+    \\ 解决：先取最新代码，处理完冲突再重新推送。公共分支别用 \verb|-f| 强制推送，会覆盖代码。
+
+    
+
+    \item \textbf{提交的用户名或邮箱不对}：提交记录里作者信息错误。
+    \\ 解决：只改当前项目，执行 \verb|git config user.name ZZF| 和对应邮箱命令。
+
+
+    \item \textbf{连不上远程仓库}：发送失败。
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.5\linewidth]{fail.png}
+        \caption{发送失败示意图}
+     \end{figure}
+    \\ 解决：检查仓库地址对不对，账号密码是否正确，排查网络问题.
+\end{itemize}
+
+\subsection{Visual Studio Code 问题与解决办法}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{VS特别卡}：VS 启动慢，加载项目半天没反应。
+    \\ 解决：关掉不用的扩展插件，清理 VS 缓存文件夹。
+    \item \textbf{vs无法编译}：VS无法进行编译。
+    \\ 解决：安装MinGW-w64编译器，并配置环境。
+
+    \item \textbf{编译报错}：路径错误。
+     \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.5\linewidth]{path error.png}
+        \caption{路径错误示意图}
+     \end{figure}
+    \\ 解决：没有安装gdb。安装好后就正常。
+    
+
+
+    \item \textbf{中文显示乱码}：控制台输出中文乱码，或者打开代码文件中文乱码。
+    \\ 解决：解决前几个问题后重启VS就自动修复了。
+
+
+\end{itemize}
+
+\subsection{VS 与 Git 联合问题与解决办法}
+\begin{itemize}[leftmargin=*]
+     \item \textbf{VS 上传更改过多}：vs更改超过10000。错误地在 \verb|C:\Users\HP| Windows 主目录执行了 \verb|git init|，把整个用户文件夹变成了 Git 仓库。
+         \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.25\linewidth]{significant changes.png}
+        \caption{大量更改示意图}
+     \end{figure}
+     \\ 解决：Git 仓库要单独建在代码文件夹里，不要在大目录下初始化。
+
+\end{itemize}
+
+
+\subsection{项目学习}
+\begin{itemize}[leftmargin=*]
+     \item \textbf{项目学习}：目前只在codeup里面看过臧宇师兄的项目，第一次接触无从下手，仅作为了解翻看了一些。
+\end{itemize}
+\end{document}
